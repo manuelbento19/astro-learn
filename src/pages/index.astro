@@ -1,0 +1,40 @@
+---
+import Header from '../components/header.astro';
+import Properties from '../components/properties.astro';
+import SlotsFather from '../components/slots-father.astro';
+import SlotsChildren from '../components/slots-children.astro';
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Astro</title>
+	</head>
+	<body>
+		<Header/>
+		<p>Here i learn about how astro make code splitting, creating components, etc...</p>
+		<hr/>
+		<Properties name='Components'/>
+		<p>Here i learn about how to use props and passing parameters</p>
+		<hr/>
+		<SlotsFather>
+			{Array.from({length: 6}).map((_,index)=>(
+				<SlotsChildren name={`I'm slot children ${index+1}`}/>
+			))}
+		</SlotsFather>
+		<p>Here i learn about how to slots, which is similar of Children props in React</p>
+		<hr>
+		<h1>File-base Routing</h1>
+		<ul>
+			<li><a href="/">Home</a></li>
+			<li><a href="/about">About</a></li>
+			<li><a href="/contact">contact</a></li>
+			<li><a href="/blogs">Blog</a></li>
+		</ul>
+		<p>Here i learn about how to navigate between pages</p>
+		<hr>
+	</body>
+</html>

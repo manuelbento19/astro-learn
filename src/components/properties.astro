@@ -1,0 +1,11 @@
+---
+interface Props{
+  name: string;
+}
+const props = Astro.props;
+console.log(props)
+---
+
+<section>
+  <h2>{props.name}</h2>
+</section>
